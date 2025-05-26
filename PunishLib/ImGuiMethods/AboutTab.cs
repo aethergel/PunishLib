@@ -68,7 +68,7 @@ namespace PunishLib.ImGuiMethods
                     GenericHelpers.ShellStart("https://discord.gg/Zzrcc8kmvy");
                 }
                 ImGui.SameLine();*/
-                ImGui.TextWrapped("Join our Discord community for project announcements, updates, and support.");
+                ImGui.TextWrapped("우리 Discord 커뮤니티에 참가해 공지, 업데이트, 그리고 지원을 받으세요.");
             });
             ImGuiEx.ImGuiLineCentered("About4", delegate
             {
@@ -81,15 +81,15 @@ namespace PunishLib.ImGuiMethods
                     });
                 }
                 ImGui.SameLine();
-                if (ImGui.Button("Repository"))
+                if (ImGui.Button("리포지토리"))
                 {
                     ImGui.SetClipboardText("https://love.puni.sh/ment.json");
-                    Notify.Success("Link copied to clipboard");
+                    Notify.Success("링크가 클립보드에 복사되었습니다");
                 }
                 if (PunishLibMain.PluginManifest.RepoUrl != null)
                 {
                     ImGui.SameLine();
-                    if (ImGui.Button("Source Code"))
+                    if (ImGui.Button("소스 코드"))
                     {
                         Process.Start(new ProcessStartInfo()
                         {
@@ -101,7 +101,7 @@ namespace PunishLib.ImGuiMethods
                 if (PunishLibMain.About.Sponsor != null)
                 {
                     ImGui.SameLine();
-                    if (ImGui.Button("Sponsor"))
+                    if (ImGui.Button("스폰서"))
                     {
                         Process.Start(new ProcessStartInfo()
                         {
@@ -132,19 +132,19 @@ namespace PunishLib.ImGuiMethods
                 {
                     ImGuiHelpers.ForceNextWindowMainViewport();
                     ImGui.SetNextWindowSize(new System.Numerics.Vector2(200, 300), ImGuiCond.Once);
-                    ImGui.Begin($"Puni.sh API Key Settings", ref openApiSettings, ImGuiWindowFlags.AlwaysAutoResize);
-                    ImGui.Text("API Key");
+                    ImGui.Begin($"Puni.sh API 키 설정", ref openApiSettings, ImGuiWindowFlags.AlwaysAutoResize);
+                    ImGui.Text("API 키");
                     if (showKeyError)
-                        ImGuiEx.Text(ImGuiColors.DalamudRed, "ERROR - Invalid API Key");
+                        ImGuiEx.Text(ImGuiColors.DalamudRed, "에러 - 유효하지 않은 API 키");
 
                     if (showSuccess)
-                        ImGuiEx.Text(ImGuiColors.HealerGreen, "Success - Your key has been saved.");
+                        ImGuiEx.Text(ImGuiColors.HealerGreen, "성공 - 당신의 키가 저장되었습니다.");
 
                     if (apiTestSuccess)
-                        ImGuiEx.Text(ImGuiColors.HealerGreen, "Success - You have a valid API key.");
+                        ImGuiEx.Text(ImGuiColors.HealerGreen, "성공 - 유효한 API 키 입니다.");
 
                     if (apiTestFail)
-                        ImGuiEx.Text(ImGuiColors.DalamudRed, "ERROR - Your API key is invalid.");
+                        ImGuiEx.Text(ImGuiColors.DalamudRed, "에러 - 유효하지 않은 API 키 입니다.");
 
                     ImGui.PushItemWidth(300);
                     if (ImGui.InputText("", ref _inputKey, 100))
@@ -212,7 +212,7 @@ namespace PunishLib.ImGuiMethods
                     if (disableTestButton)
                         ImGui.BeginDisabled();
 
-                    if (IconButtons.IconTextButton(FontAwesomeIcon.Question, "Test Key"))
+                    if (IconButtons.IconTextButton(FontAwesomeIcon.Question, "테스트"))
                     {
                         if (!string.IsNullOrEmpty(PunishLibMain.SharedConfig.APIKey))
                         {

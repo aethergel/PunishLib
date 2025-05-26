@@ -21,13 +21,13 @@ namespace PunishLib
         {
             ImGuiEx.ImGuiLineCentered("AboutHeader", delegate
             {
-                ImGuiEx.Text($"Published and developed with ");
+                ImGuiEx.Text($"Puni.sh가 ");
                 ImGui.PushFont(UiBuilder.IconFont);
                 ImGui.SameLine(0, 0);
                 ImGuiEx.Text(ImGuiColors.DalamudRed, FontAwesomeIcon.Heart.ToIconString());
                 ImGui.PopFont();
                 ImGui.SameLine(0, 0);
-                ImGuiEx.Text($" by Puni.sh");
+                ImGuiEx.Text($" 와 함께 개발하고 배포합니다");
             });
         }
 
@@ -36,13 +36,13 @@ namespace PunishLib
             //Developed with ❤️ by {Developer}, published by Puni.sh
             ImGuiEx.ImGuiLineCentered("AboutHeader", delegate
             {
-                ImGuiEx.Text($"Developed with ");
+                ImGuiEx.Text($"{PunishLibMain.About.Developer}가 ");
                 ImGui.PushFont(UiBuilder.IconFont);
                 ImGui.SameLine(0, 0);
                 ImGuiEx.Text(ImGuiColors.DalamudRed, FontAwesomeIcon.Heart.ToIconString());
                 ImGui.PopFont();
                 ImGui.SameLine(0, 0);
-                ImGuiEx.Text($" by {PunishLibMain.About.Developer}, published by Puni.sh");
+                ImGuiEx.Text($" 와 함께 개발하고, Puni.sh가 배포합니다");
             });
         }
     }
